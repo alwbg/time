@@ -12,7 +12,7 @@
  * new Time( '12h:mm:ss (凌晨|上午|下午|傍晚) YYYY/MM/DD' ).fire(1280207640000)//输入当前时间
  * 输出结果 > 01:14:00 下午 2010/07/27
  * 
- * creation-time : 2017-06-22 18:35:54 PM
+ * creation-time : 2017-06-22 21:37:15 PM
  */
 ;(function (global, factory) {
 	if (typeof module === 'object') {
@@ -25,7 +25,8 @@
 		//window
 		factory();
 	}
-}(this, function ( require, exports, module ) {	function run( O, name ){
+}(this, function ( require, exports, module ) {
+	function run( O, name ){
 		var args = Array.apply( null, arguments ), fx;
 		O       = args.shift() || {};
 		name    = args.shift();
@@ -99,4 +100,5 @@
 
 	this.Time = T;
 	return T
+
 }));
