@@ -11,21 +11,21 @@
  * 输出结果 > 13:14:00 下午 2010/07/27
  * new Time( '12h:mm:ss (凌晨|上午|下午|傍晚) YYYY/MM/DD' ).fire(1280207640000)//输入当前时间
  * 输出结果 > 01:14:00 下午 2010/07/27
- * 
- * creation-time : 2017-06-22 21:37:15 PM
+ * creation-time : 2017-06-27 18:40:07 PM
  */
-;(function (global, factory) {
-	if (typeof module === 'object') {
-		//modejs
-		module.exports = factory();
+;(function( global, factory ){
+	global[ 'global' ] = global; 
+	if( typeof exports === 'object' ) {
+		factory( require, exports, module );
 	} else if (typeof define === 'function') {
 		//AMD CMD
-		define(factory);
+		define( 'time', factory );
 	} else {
-		//window
-		factory();
+		var module = { exports : {} }
+		factory( new Function, module.exports, module );
+		global['Time'] = module.exports;
 	}
-}(this, function ( require, exports, module ) {
+}( this, function( require, exports, module ) {
 	function run( O, name ){
 		var args = Array.apply( null, arguments ), fx;
 		O       = args.shift() || {};
@@ -57,7 +57,6 @@
 	T.prototype.getAmOrPm = function( date ){
 		var hours = date.getHours();
 		return this.m[ Math.floor(hours * this._mode_length__ / 24) ];
-		//return hours > 12 ? this.pm : this.am
 	}
 	T.prototype.Map = {
 		'getMonth' 	: 1,
@@ -98,7 +97,5 @@
 		return val.replace( /(?:(\D)|^)(\d)(?!\d)/g, '$10$2' );
 	}
 
-	this.Time = T;
-	return T
-
-}));
+	module.exports = T;
+}))
