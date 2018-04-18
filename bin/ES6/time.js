@@ -1,19 +1,3 @@
-/**
- * 时间输出模版
- * @author alwbg@163.com | soei
- * YYYY 年
- * MM  月
- * DD 	日
- * hh mm ss
- * MM|hh|DD|mm|ss|YYYY|YY|ampm|24h|12h
- * new Time( 'YY/mm/MM' ).fire()//输入当前时间
- * new Time( 'hh:mm:ss (凌晨|上午|下午|傍晚) YYYY/MM/DD' ).fire(1280207640000)//输入当前时间
- * 输出结果 > 13:14:00 下午 2010/07/27
- * new Time( '12h:mm:ss (凌晨|上午|下午|傍晚) YYYY/MM/DD' ).fire(1280207640000)//输入当前时间
- * 输出结果 > 01:14:00 下午 2010/07/27
- * 
- * creation-time : 2017-06-22 17:49:24 PM
- */
 class Time extends Date {
 	/**
 	 * 构造函数
@@ -26,6 +10,9 @@ class Time extends Date {
 			this.__Mode( mode );
 		}
 	};
+	/**
+	 * 初始化函数
+	 */
 	__init(){
 		this._map__ = {
 			'getMonth' 	: 1,

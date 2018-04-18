@@ -1,6 +1,9 @@
 /**
  * 时间输出模版
- * @author alwbg@163.com | soei
+ * @author alwbg@163.com | soei 
+ *  ------------------------------------
+ *  -  https://github.com/alwbg/time   -
+ *  ------------------------------------
  * YYYY 年
  * MM  月
  * DD 	日
@@ -11,7 +14,7 @@
  * 输出结果 > 13:14:00 下午 2010/07/27
  * new Time( '12h:mm:ss (凌晨|上午|下午|傍晚) YYYY/MM/DD' ).fire(1280207640000)//输入当前时间
  * 输出结果 > 01:14:00 下午 2010/07/27
- * creation-time : 2017-06-27 22:17:25 PM
+ * creation-time : 2017-06-27 22:17:24 PM
  */
 ;(function( global, factory ){
 	global[ 'global' ] = global; 
@@ -21,9 +24,9 @@
 		//AMD CMD
 		define( 'time', factory );
 	} else {
-		var module = { exports : {} }
-		factory( new Function, module.exports, module );
-		global['Time'] = module.exports;
+		var MODULE = { exports : {} }
+		factory( new Function, MODULE.exports, MODULE );
+		global['time'] = MODULE.exports;
 	}
 }( this, function( require, exports, module ) {
 	function run( O, name ){
